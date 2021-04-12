@@ -1,0 +1,120 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body.body {
+    background: #0095da;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.login-size {
+    width: 25em;
+    height: 100%;
+    margin: auto;
+}
+
+.login-size-header {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.login-size-subheader {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-form{
+	-webkit-box-shadow: 1px 4px 27px -5px rgba(0,0,0,1);
+	-moz-box-shadow: 1px 4px 27px -5px rgba(0,0,0,1);
+	box-shadow: 1px 4px 27px -5px rgba(0,0,0,1);
+	top: 50%;
+    left: 50%;
+    width: 40em;
+    height: 30em;
+    margin-top: -11em;
+    margin-left: -20em;
+    border: 1px solid: white;
+    background-color: white;
+    position: fixed;
+
+}
+
+h5.h5 {
+    margin-top: 1em;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+hr.line {
+    border: 3px solid;
+    border-bottom-color: rgb(0, 149, 218);
+    width: 10em;
+    margin-top: 0;
+}
+
+p.caption-panel {
+    margin-top: -10px;
+    color: agency fb;
+    font-family: agency fb;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.login-inputs {
+    margin-top: 6em;
+    width: 50%;
+}
+
+input.form-control.username, input.form-control.password, button.btn.btn-primary.btn-block.login {
+	margin-top: 2.3em;
+    height: 40px;
+}
+
+input.form-control.username, input.form-control.password {
+    font-size: 16px;
+    height: 3em;
+    border-radius: 3px;
+}
+
+button.btn.btn-primary.btn-block.login {
+    background: #ffcc00;
+    font-size: 16px;
+    margin-top: 2.5em;
+    height: 3.4em;
+    border-color: transparent;
+    color: #333;
+    font-weight: bold;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-group.forgot {
+    margin-top: 2em;
+}
+
+div.alert.alert-danger {
+    display: none;
+}
+
+input#username:focus, input#password:focus{
+    border-bottom-color: #0095da;
+    transition: 0.7s;
+    color: rgb(0, 149, 218);
+    font-weight: bold;
+}
+
+
+button#btn-login:hover, button#btn-login:focus {
+    color: white;
+    transition: 0.9s;
+    background: #424242;
+}
+
+.login-box {
+    padding: 15px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+}

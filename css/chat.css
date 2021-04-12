@@ -1,0 +1,19 @@
+div#dateTimeSentContent {
+    margin-top: 40%;
+    margin-left: 33%;
+    height: 20%;
+}
+
+p.timeSent {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.modal-footer.datetime {
+    padding: 5px;
+}
+
+.modal-header.datetimeheader {
+    padding: 10px;
+    background: #313b48;
+}

@@ -1,0 +1,344 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+h4.credits {
+    color: #333;
+    font-size: 30px;
+}
+
+select{
+  appearance: none;
+  padding: 10px;
+}
+
+label {
+    font-size: 18px;
+    font-family: tahoma;
+    font-weight: 500;
+}
+
+submit.btn.btn-primary.btn-block:hover{
+  background: rgba(41, 106, 165, 0.81);
+  color: white;
+  transition: 1s;
+}
+
+span.fa.fa-credit-card {
+    margin: 4em;
+    color: white;
+    font-size: 30px;
+    z-index: 100;
+    text-align: center;
+}
+
+
+div#chatUI {
+    color: white;
+}
+
+h5.pickapp-drivers {
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.driversArea {
+    overflow: auto;
+    background: rgb(74, 99, 132);
+    padding: 10px;
+    border-radius: 10px;
+    height: 550px;
+    text-align: center;
+}
+
+h5.driver-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #9e9e9e;
+    margin-top: -0.1em;
+   /* margin-right: 3em;*/
+   width: 10px;
+}
+
+/*#driver-bg {
+    background: aliceblue;
+    padding: 25px;
+    color: gray;
+    border-radius: 20px;
+}*/
+
+.media.driver-bg {
+    background: aliceblue;
+    padding: 25px;
+    color: gray;
+    border-radius: 20px;
+}
+
+p.prev-convo {
+    color: #b9b9b9;
+    margin-bottom: 0;
+    margin-top: 0;
+    white-space: nowrap;
+    width: 10px;
+    text-overflow: ellipsis;
+}
+
+.driver-convo-wrapper {
+    margin-top: 0.3em;
+    margin-bottom: 0;
+}
+
+.chat-area-bg {
+    position: absolute;
+    color: white;
+    background: #4a6384;
+    height: 550px;
+    width: 100%;
+    /* margin-left: -17em; */
+    margin-top: 3.3em;
+    border-radius: 5px;
+}
+
+
+h5.current-chat-driver {
+    border-bottom: 3px solid #242f3e;
+    padding: 15px;
+    color: #ffffff;
+    background: #637790;
+    padding: 10;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+h5.user-messages {
+    white-space: nowrap;
+    margin-top: 10px;
+    position: absolute;
+    font-size: 24px;
+}
+
+button#btn-send {
+    padding: 15px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    margin-right: 6.5px;
+    margin-top: 28.68em;
+}
+
+button#btn-send:focus {
+    outline: none;
+    box-shadow: none;
+    background: #ff5959;
+}
+
+button#btn-send:hover {
+    outline: none;
+    box-shadow: none;
+    background: #ff5959;
+}
+
+textarea.type-mess {
+    width: 100%;
+    padding: 6.6px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    color: gray;
+    position: absolute;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 3px solid #242f3e;
+}
+
+body#body {
+    overflow: auto;
+}
+
+
+h5.pull-right.sender-message {
+    background: #3f5eff;
+    padding: 15px 30px 15px 30px;
+    font-size: 15px;
+    border-radius: 50px;
+}
+
+.sender-receiver-convo {
+    height: 400px;
+    word-wrap: break-word;
+    margin-top: 1.99em;
+    margin-left: 2.5em;
+}
+
+.row.message-wrapper {
+    margin-bottom: 20px;
+}
+
+.row.message-wrapper1 {
+     margin-top: 20px;
+    margin-left: -45px;
+    margin-bottom: 20px;
+}
+
+h5.pull-left.receiver-message {
+    background: white;
+    color: black;
+    padding: 15px 30px 15px 30px;
+    border-radius: 50px;
+    margin-top: -26.8px;
+    margin-right: 2.5em;
+    margin-left: 2.5em;
+}
+
+.scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 409px;
+    margin-top: -7px;
+}
+
+#style-scroll::-webkit-scrollbar-track{
+	margin-top: -30px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+	background-color: #4a6384;
+}
+
+#style-scroll::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: #637790;
+}
+
+#style-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ffffff;
+}
+
+.media.driver-bg.active-convo {
+    background: rgba(93, 129, 160, 0.87);
+}
+
+.media.driver-bg:hover{
+    cursor: pointer;
+    background: rgba(0, 212, 90, 0.34);
+}
+
+#allDrivers::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #4a6384;
+}
+
+#allDrivers::-webkit-scrollbar
+{
+    width: 2px;
+    background-color: #637790;
+}
+
+#allDrivers::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #ffffff;
+}
+
+#allDrivers{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+img#driver-avatar {
+    margin-right: 10px;
+}
+
+@keyframes lds-rolling {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@-webkit-keyframes lds-rolling {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.lds-rolling {
+  position: absolute;
+  top: 40%;
+  left: 44%;
+}
+.lds-rolling div,
+.lds-rolling div:after {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 20px solid #ff6254;
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+.lds-rolling div {
+  -webkit-animation: lds-rolling 1s linear infinite;
+  animation: lds-rolling 1s linear infinite;
+  top: 100px;
+  left: 100px;
+}
+.lds-rolling div:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.lds-rolling {
+  width: 83px !important;
+  height: 83px !important;
+  -webkit-transform: translate(-41.5px, -41.5px) scale(0.415) translate(41.5px, 41.5px);
+  transform: translate(-41.5px, -41.5px) scale(0.415) translate(41.5px, 41.5px);
+}
+
+.ac-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.ac-subwrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container{
+    height: 100%;
+}
+
+.form-wrapper{
+    width: 25em;
+    margin: auto;
+}
+
+.credits-submit{
+    background: #333;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.credits-submit:hover, .credits-submit:active, .credits-submit:focus{
+    background: #666;
+    transition: ease-in;
+}

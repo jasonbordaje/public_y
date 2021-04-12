@@ -1,0 +1,1 @@
+SELECT * from request_header where status = 'CONFIRMED' and assigned_driver = 2

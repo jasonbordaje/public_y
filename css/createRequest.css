@@ -1,0 +1,263 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+h4.createRequest {
+    font-size: 28px;
+    color: #333
+}
+
+.buttonsWrapper {
+    margin-left: 15px;
+}
+
+.buttonsWrapper > .btn.btn-lg.btn-cancel {
+    margin-right: 16px;
+}
+
+.buttonsWrapper > .btn.btn-lg.btn-cancel, .buttonsWrapper > .btn.btn-lg.btn-submit{
+    width: 42%;
+}
+
+button.btn.btn-lg.btn-cancel {
+    background: #ffcc00;
+}
+
+button.btn.btn-lg.btn-submit {
+    background: #333;
+    color: white;
+}
+
+.textBoxes > input{
+    margin-bottom: 10px;
+
+}
+
+h5.headerCaption {
+    font-size: 28px;
+}
+
+.requestPendingDetails > p{
+height: 30px;
+}
+
+.requestPendingDetails {
+    color: #adadad;
+}
+
+span.content {
+    color: white;
+}
+
+.details > p > span{
+    margin-left: 10px;
+}
+
+.details::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: #18202b;
+}
+
+.details::-webkit-scrollbar
+{
+    width: 5px;
+    margin-left: 0;
+    background-color: #18202b;
+}
+
+.details::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #555;
+}
+
+.details > p > b{
+    color: white;
+}
+
+.btn.btn-lg.btn-confirm{
+    color: white;
+    background: #17b54f;
+}
+
+.btn.btn-lg.btn-edit{
+    color: white;
+    background: #8a2d2d;
+}
+
+.pendingButtonsWrapper {
+    margin-right: -2em;
+    margin-left: 12px;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.datetimepicker.datetimepicker-dropdown-bottom-right.dropdown-menu {
+    margin: 8em 0;
+}
+
+h5#exampleModalLabel {
+    font-size: 20px;
+}
+
+div#listHeader {
+    background: #ffcc00;
+    padding: 15px 25px;
+}
+
+.modal-header .close {
+    margin-top: 3px;
+    color: white;
+}
+
+.row.bgReq {
+    background: #404040;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+ul.detailsWrap{
+    border-top: 1.5px solid rgb(52, 64, 80);
+    margin: 5%;
+}
+
+ul.detailsWrap > li{
+    text-align: justify;
+    margin-right: 0;
+    margin-left: -23px;
+    margin-top: 10px;
+}
+
+button#btn-create:focus{
+    background: rgba(51, 122, 183, 0.19);
+    transition: 0.3s;
+}
+
+i#re {
+    float: left;
+    color: #f1f1f1;
+}
+
+i#re:hover{
+    cursor: pointer;
+}
+
+h5.emptyPe {
+    background: #636363;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+
+select.form-control.input-choice {
+    margin-top: 31%;
+    margin-left: 20%;
+    background: transparent;
+    border-radius: 50px;
+    color: #ffffff;
+    border: 1.5px solid #bfbfbf;
+    box-shadow: none;
+    width: 50%;
+    height: 75px;
+    font-size: 18px;
+}
+
+select.form-control.input-choice > option{
+    color: black;
+}
+
+div#mbody {
+    height: 25em;
+    overflow-y: scroll;
+}
+
+input#acctName {
+    position: absolute;
+    margin-top: -2.6em;
+    width: 40%;
+    margin-left: 55%;
+}
+
+.row.requestAreas {
+    height: 100%;
+}
+.wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.subwrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.row.requestAreas .col-md-6 {
+    height: 100% !important;
+}
+
+.requestInputsWrapper {
+    display: table;
+    width: 100%;
+    height: 90%;
+}
+
+.requestInputSubwrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.crh-button {
+    text-align: center;
+}
+
+.username {
+    margin-left: 10px;
+    margin-top: 4px;
+    text-transform: capitalize;
+}
+
+.table-custom-style tr:nth-child(1) td[name="bordered"]{
+    border-top: 0;
+}
+
+.table-custom-style tr:nth-child(odd) td[name="bordered"]{
+    border-width: thin;
+}
+
+.table-custom-style tr:nth-child(even) td[name="bordered"]{
+    border-width: thin;
+}
+
+.listOfUsersWrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+b#accountIdentifier {
+    font-size: 23px;
+}
+
+.container {
+    height: 100%;
+}
+
+.padding-size {
+    margin: 0 5%;
+}
+
+.btn-wrap {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.details {
+    display: none;
+    height: 27.5em;
+    overflow: hidden scroll;
+}
