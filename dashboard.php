@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 $id = $_SESSION['id'];
 error_reporting(0);
@@ -184,11 +183,11 @@ else{
                             </div>
                             <div class="license-no">
                                 <label>License Number</label>
-                                <input type="text" class="form-control licenseno" name="licenseno" placeholder="License Number" required="">
+                                <input type="text" class="form-control licenseno" name="licenseno" placeholder="License Number">
                             </div>
                             <div class="api-key">
                                 <label>Google Api Key</label>
-                                <input type="text" class="form-control apikey" name="apikey" placeholder="Api Key" required="">
+                                <input type="text" class="form-control apikey" name="apikey" placeholder="Api Key">
                             </div>
                             <button type="button" data-target="#myCarousel" data-slide="prev" class="btn btn-primary">Previous</button>
                             <input type="submit" class="btn btn-primary pull-right" value="Register" />
@@ -731,6 +730,21 @@ else{
 <?php
 include("completeRequestModal.php");
 ?>
+<script>
+    $(document).ready(function(){
+        $("select[name=usertype]").change(function(){
+            var val = $(this).val();
+            if(val == 1){
+                $('input[name=licenseno]').attr('required',false);
+                $('input[name=apikey]').attr('required',false);
+            }else{
+                $('input[name=licenseno]').attr('required',true);
+                $('input[name=apikey]').attr('required',true);
+            }
+        });
 
+    });
+    
+</script>
 </body>
 </html>

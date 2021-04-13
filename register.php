@@ -1,5 +1,6 @@
 <?php
 include('includes/dbconfig.php');
+session_start();
 error_reporting(0);
 $userType = $_POST['usertype'];
 $userName = $_POST['username'];
@@ -16,7 +17,14 @@ $createdate= date('Y-m-d H:i:s', strtotime('+8 hours'));
 $imgVal = $_FILES['uploadP']['name'];
 $imgVal1 = "user_avatar/1/".$imgVal;
 
-$sql = "INSERT INTO mst_admin_user (username, password, fname, lname, mname, avatar, contact_no, email_add, licenseno, user_type, created_by, dateTime_created, google_api_key) VALUES('$userName', '$encpass', '$fname', '$lname', '$mname', '$imgVal1', '$contactno', '$emailadd', '$licenseno', '$userType', 1, '$createdate', '$api_key')";
+if ($userType == 1) {
+	$locationId = $_SESSION['location_id'];
+}else{
+	$locationId = NULL;
+
+}
+
+$sql = "INSERT INTO mst_admin_user (username, password, fname, lname, mname, avatar, contact_no, email_add, licenseno, user_type, created_by, dateTime_created, google_api_key, location_id) VALUES('$userName', '$encpass', '$fname', '$lname', '$mname', '$imgVal1', '$contactno', '$emailadd', '$licenseno', '$userType', 1, '$createdate', '$api_key', '$locationId')";
 $sql = $conn->query($sql);
 
 $driverID = $conn->insert_id;
@@ -45,7 +53,7 @@ if (move_uploaded_file($_FILES['uploadP']['tmp_name'], $uploadfile)) {
 	   echo "<script>alert('Upload Failed!');</script>";
 	}
 } else {
-   echo "<script>alert('Upload Failed!');</script>";
+   echo "<script>alert('Upload Failed!');window.location.replace('dashboard.php')</script>";
 }
 
 ?>
