@@ -4,7 +4,7 @@ $id = $_SESSION['id'];
 error_reporting(0);
 $successSession = $_SESSION["success"];
 $errorSession = $_SESSION["error"];
-
+include('includes/global.php');
 if($successSession){
 include('admin/dashboard.php');
 }
@@ -36,13 +36,13 @@ else{
     <script src="js/admin.js"></script>
     <script src="js/autoassign.js"></script>
     <!--styles-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="<?php echo $url_home ?>/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $url_home ?>/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="<?php echo $url_home ?>/css/jquery-ui.theme.min.css">
+    <link href="<?php echo $url_home ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url_home ?>/css/admin.css">
+    <link rel="stylesheet" href="<?php echo $url_home ?>/css/animate.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $url_home ?>/favicon.ico">
     <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -52,49 +52,7 @@ else{
 <div class="loader1" id="loader">
 </div>
 <!--navbar-->
-<nav class="navbar navbar-header navbar-fixed-top" style="margin-bottom: 0;">
-        <div class="row" style="height: 100%; margin: 0">
-            <div class="row1">
-            <div class="row2">
-            <div class="col-sm-1" style="text-align: center; left: 1em">
-                <a href="dashboard.php"><img src="images/title.png" class="logo" style="margin: 10px"></a>
-            </div>
-            <div class="col-sm-2">
-                <h5 class="admin">&nbsp;&nbsp;Admin</h5>
-            </div>
-            <div class="col-sm-2" style="text-align: center; float: right">
-                <h5 class="account dropbtn" onclick="myFunction()">Account <span class="fa fa-caret-down"></span></h5>
-                <div id="myDropdown" class="dropdown-content">
-                    <div class="navigation-wrapper">
-                        <a href="#register" class="a" id="btn-register"><span class="fa fa-user"></span> Register User</a>
-                        
-                        <a href="createRequest.php" class="a" id="btn-create"><span class="fa fa-plus"></span> Create Request</a>
-                        
-                        <a href="#" class="a" id="chatDriver"><span class="fa fa-comment"></span> Chat Driver</a>
-                        
-                        <a href="#logsWrapper" class="a" id="actionlogs"><span class="fa fa-th-list"></span> Logs <span class="fa fa-angle-down" id="angleDown"></span></a>
-                        <ul class="logsWrapper" style="display: none;" id="logsList">
-                            <li id="actions" style="cursor: pointer;"><span class="fa fa-handshake-o"></span> Action Logs</li>
-                            <li id="reqLogs" data-target="#requestLogs" data-toggle="modal" style="cursor: pointer;"><span class="fa fa-list" ></span> Request Logs</li>
-                            <li id="wowLogs" data-target="#wowreports" data-toggle="modal" style="cursor: pointer;"><span class="fa fa-list" ></span> WoW Report</li>
-                            <li id="driverr" data-target="#driverrating" data-toggle="modal" style="cursor: pointer;"><span class="fa fa-list" ></span> Driver Rating</li>
-                        </ul>
-                        
-                        <a href="#loadBalance" class="a" id="loadBalance"><span class="fa fa-money"></span> Load Balance <span class="fa fa-angle-down" id="angleDown1"></span></a>
-                        <ul class="loadBalanceWrapper" id="loadBalanceList" style="display: none;">
-                            <li id="pDrivers" style="cursor: pointer;"><span class="fa fa-id-card"></span> PA Driver</li>
-                            <li id="pCustomer" style="cursor: pointer;"><span class="fa fa-users"></span> PA Customer</li>
-                        </ul>
-                        
-                        <a href="#logout" class="a" id="btn-logout"><span class="fa fa-sign-out"></span> Logout</a>
-                        
-                    </div>
-                </div>
-            </div>
-            </div>
-            </div>
-        </div>
-    </nav>
+<?php include('layout/header.php'); ?>
 <!--endnavbar-->
 <!--map-->
 <div id="map"></div>
@@ -727,6 +685,50 @@ else{
         </div>
     </div>
 </div>
+<!-- Add Location -->
+<div class="modal fade" id="addLocation" role="dialog">
+    <div class="cd-wrapper">
+    <div class="cd-subwrapper">
+    <div class="modal-dialog">
+        <div class="modal-content" id="assignContent1">
+            <div class="modal-header" id="assignContentHeader">
+                <button type="button" data-dismiss="modal" class="close">&times;</button>
+                <div class="modal-title">
+                    <h4>Location</h4>
+                </div>
+            </div>
+            <div class="modal-body" id="assignDriverBody">
+                <form method="">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Lat Index</label>
+                        <input type="number" name="lat" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Long Index</label>
+                        <input type="number" name="long" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer center-block">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary btn-block" id="btn-yes">Yes</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-danger btn-block" id="btn-no">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+<!-- End add location -->
 <?php
 include("completeRequestModal.php");
 ?>

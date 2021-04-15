@@ -10,7 +10,6 @@ $sql = "SELECT mau.id, locations.location_lat, locations.id as  location_id FROM
 $sql = $conn->query($sql);
 
 if($sql->num_rows>0){
-	
 	$row = mysqli_fetch_assoc($sql);
 	$_SESSION['id'] = $row['id'];
 	$_SESSION['location_index'] = $row['location_lat'];
