@@ -1,7 +1,7 @@
 <?php
     include('../includes/global.php');
 ?>
-<nav class="navbar navbar-header navbar-fixed-top" style="margin-bottom: 0;">
+<nav class="navbar navbar-header navbar-fixed-top">
         <div class="row" style="height: 100%; margin: 0">
             <div class="row1">
             <div class="row2">
