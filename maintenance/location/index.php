@@ -42,6 +42,7 @@ include('../../includes/global.php');
 	                    <th>Name</th>
 	                    <th>Latitude Index</th>
 	                    <th>Longitude</th>
+	                    <th>Rate</th>
 	                </tr>
 	            </thead>
 	        </table>
@@ -100,7 +101,8 @@ include('../../includes/global.php');
 			    	{data: 'count'},
 			    	{data: 'location_name'},
 			    	{data: 'location_lat'},
-			    	{data: 'location_long'}
+			    	{data: 'location_long'},
+			    	{data: 'rate'}
 			    ],
 			       
 			});
