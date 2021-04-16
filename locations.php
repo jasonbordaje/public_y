@@ -1,10 +1,13 @@
 <?php
+session_start();
+error_reporting(0);
+
 include('includes/dbconfig.php');
 
 $sql  = "SELECT loc.id, loc.name, loc.location_lat, loc.location_long, rate.rate FROM locations as loc LEFT JOIN rate ON loc.id = rate.location_id";
 $result = mysqli_query($conn,$sql);
-// $result->fetch_all(MYSQLI_ASSOC);
-// var_dump(mysqli_free_result($result));
+
+
 $data = [];
 $count = 0;
 $increment = 1;

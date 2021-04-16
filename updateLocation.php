@@ -8,10 +8,13 @@ include('includes/dbconfig.php');
 
 $locationLat = $_REQUEST['location_lat'];
 $locationLong = $_REQUEST['location_long'];
+$rate = $_REQUEST['rate'];
 $id = $_REQUEST['id'];
 
 $query = "UPDATE locations SET location_lat = $locationLat, location_long = $locationLong WHERE id = $id";
-if($conn->query($query) === true){
+$queryRate = "UPDATE rate SET rate = $rate WHERE location_id = $id";
+
+if($conn->query($query) === true && $conn->query($queryRate)){
 	echo 'Sucessfully Updated.';
 }else{
 	echo 'Something went Wrong!';

@@ -40,8 +40,8 @@ include('../../includes/global.php');
 	                <tr>
 	                    <th>No.</th>
 	                    <th>Name</th>
-	                    <th>Latitude Index</th>
-	                    <th>Longitude</th>
+	                    <th>Lat Index</th>
+	                    <th>Long Index</th>
 	                    <th>Rate</th>
 	                </tr>
 	            </thead>
@@ -69,6 +69,14 @@ include('../../includes/global.php');
 									<div class="form-group">
 										<label>Location Longitude</label>
 										<input type="number" name="location_long" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-md-6">
+									<div class="form-group">
+										<label>Rate</label>
+										<input type="number" name="rate" step=".01" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -109,6 +117,7 @@ include('../../includes/global.php');
 			var locationLat;
 			var locationLong;
 			var locationId;
+			var rate;
 			$(document).on('click','#table tr',function(){
 				var table = $('#table').DataTable();
 
@@ -116,9 +125,12 @@ include('../../includes/global.php');
 				locationId = data.id;
 				locationLat = data.location_lat;
 				locationLong = data.location_long;
+				rate = data.rate;
+
 				$('input[name=location_lat]').val(locationLat);
 				$('input[name=location_long]').val(locationLong);
-				$('.modal-title').text(data.location_name);
+				$('input[name=rate]').val(rate);
+				$('.modal-title').html('<strong>'+data.location_name+'</strong>');
 				$
 				$('.modal').modal('show');
 			})
@@ -126,10 +138,11 @@ include('../../includes/global.php');
 			$('#btn-update').click(function(){
 				locationLat = $('input[name=location_lat]').val();
 				locationLong = $('input[name=location_long]').val();
+				rate = $('input[name=rate]').val();
 				$.ajax({
 					url: url+'/updateLocation.php',
 					type: 'get',
-					data: 'id='+locationId+'&location_lat='+locationLat+'&location_long='+locationLong,
+					data: 'id='+locationId+'&location_lat='+locationLat+'&location_long='+locationLong+"&rate="+rate,
 					success: function(data){
 						$('.modal').modal('hide');
 						$('#table').DataTable().ajax.reload();
