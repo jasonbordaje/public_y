@@ -1,10 +1,17 @@
 <?php
 include '../includes/dbconfig2.php';
-$location = $_REQUEST['location_latitude'];
-$locationIndex = explode(".",$location,2);
-$locationIndex = (int)$locationIndex[0];
+$locationLat = $_REQUEST['location_latitude'];
+$locationLng = $_REQUEST['location_longitude'];
 
-$getLocation = "SELECT * FROM locations WHERE location_lat = $locationIndex LIMIT 1";
+$locationLatIndex = explode(".",$locationLat,2);
+$locationLatIndex = (int)$locationLatIndex[0];
+
+$locationLngIndex = explode(".",$locationLng,2);
+$locationLngIndex = (int)$locationLngIndex[0];
+
+// var_dump($locationLatIndex);
+$getLocation = "SELECT * FROM locations WHERE location_lat = $locationLatIndex AND location_long = $locationLngIndex LIMIT 1";
+
 $getLocation = $conn2->query($getLocation);
 $getLocation = mysqli_fetch_assoc($getLocation);
 $locationId = $getLocation['id'];
