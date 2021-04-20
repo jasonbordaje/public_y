@@ -2,6 +2,8 @@
 
 session_start();
 include('includes/dbconfig.php');
+session_start();
+$locationId = $_SESSION['user']['location_long'];
 $id = 5;
 $result = [];
 $count = 0;
@@ -9,7 +11,7 @@ $msgCount;
 
 mysqli_set_charset( $conn, 'utf8');
 
-$sql = "SELECT  mst_admin_user.balance, mst_admin_user.avatar, mst_admin_user.id, mst_admin_user.username,driver_availability.is_online, driver_availability.is_available, mst_admin_user.fname, mst_admin_user.contact_no, mst_admin_user.licenseno FROM driver_availability LEFT JOIN mst_admin_user ON driver_availability.driver_id = mst_admin_user.id WHERE mst_admin_user.user_type = 2 ORDER BY driver_availability.is_online OR driver_availability.is_available  DESC";
+$sql = "SELECT  mst_admin_user.balance, mst_admin_user.avatar, mst_admin_user.id, mst_admin_user.username,driver_availability.is_online, driver_availability.is_available, mst_admin_user.fname, mst_admin_user.contact_no, mst_admin_user.licenseno FROM driver_availability LEFT JOIN mst_admin_user ON driver_availability.driver_id = mst_admin_user.id WHERE mst_admin_user.user_type = 2 AND mst_admin_user.location_id = $locationId ORDER BY driver_availability.is_online OR driver_availability.is_available  DESC";
 $sql = $conn->query($sql);
 while($row = mysqli_fetch_assoc($sql)){
 	$driver_id = $row['id'];
